@@ -2,8 +2,8 @@
 (function () {
 
     var angularModules      = ["ngRoute","ngTouch"];
-    var customModules       = ["Home","Help","Profil","Inbox","Tiempoaire"];
-    var componentsModules   = ["MainHeader","MainFooter","MainMenu",'carriers'];
+    var customModules       = ["Home"];
+    var componentsModules   = ["MainHeader"];
 
     var modules = angularModules.concat(customModules,componentsModules);
     angular.module('App', modules);
