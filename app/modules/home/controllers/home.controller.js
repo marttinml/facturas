@@ -11,8 +11,8 @@
         };
 
         $scope.tabsConfig = [
-            { show : false, title:'title tab 1'},
-            { show : true, title:'title tab 2'}
+            { show : false, title:'Factura'},
+            { show : true, title:'Producto'}
         ];
 
         $scope.tableList = [
