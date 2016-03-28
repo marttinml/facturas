@@ -1,0 +1,9 @@
+<div class="dialog">
+	<div class="header">{{options.title}}</div>
+	<div class="content">
+		<ng-transclude></ng-transclude>
+	</div>
+	<div class="footer">
+		<button ng-repeat="button in options.buttons" ng-click="button.action()">{{button.label}}</button>
+	</div>
+</div>

@@ -3,7 +3,7 @@
 
     var angularModules      = ["ngRoute","ngTouch"];
     var customModules       = ["Home"];
-    var componentsModules   = ["MainHeader"];
+    var componentsModules   = ["MainHeader","alDialog"];
 
     var modules = angularModules.concat(customModules,componentsModules);
     angular.module('App', modules);

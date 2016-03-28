@@ -1,3 +1,156 @@
 <main-header source="header"></main-header>
-<main-footer source="quickMenu"></main-footer>
-<main-menu></main-menu>
+
+<al-dialog source="dialogIVA" ng-show="dialogIVAShow">
+	<div class="wrapper-input">
+		<label for="">label</label>
+		<input type="text" placeholder="Número de cuenta">		
+	</div>
+
+</al-dialog>
+<al-dialog source="dialogISR" ng-show="dialogISRShow">
+	<div class="wrapper-input">
+		<label for="">Label</label>
+		<input type="text" placeholder="Número de cuenta">		
+	</div>
+</al-dialog>
+
+<main class="facturas">
+	<aside class="left">
+		<ul class="tabs">
+			<li ng-class="{active:tabsConfig[0].show}" ng-click="tabSelect(0)">
+					{{tabsConfig[0].title}}
+			</li>
+			<li ng-class="{active:tabsConfig[1].show}" ng-click="tabSelect(1)">
+					{{tabsConfig[1].title}}
+			</li>
+		</ul>
+		<ul class="tabs-content">
+			<li ng-show="tabsConfig[0].show">
+				<div class="wrapper-input">
+					<label for="">Label</label>
+					<select name="" id="">
+						<option value="">select</option>
+					</select>			
+				</div>
+				<div class="wrapper-input">
+					<label for="">Label</label>
+					<select name="" id="">
+						<option value="">select</option>
+					</select>			
+				</div>
+				<div class="wrapper-input">
+					<label for="">Label</label>
+					<select name="" id="">
+						<option value="">select</option>
+					</select>			
+				</div>
+				<div class="wrapper-input">
+					<label for="">Label</label>
+					<select name="" id="">
+						<option value="">select</option>
+					</select>			
+				</div>
+				<div class="wrapper-input">
+					<label for="">Label</label>
+					<select name="" id="">
+						<option value="">select</option>
+					</select>			
+				</div>
+				<div class="wrapper-input">
+					<label for="">Label</label>
+					<select name="" id="">
+						<option value="">select</option>
+					</select>			
+				</div>
+			</li>
+			<li ng-show="tabsConfig[1].show">
+				<div class="wrapper-input">
+					<label for="">Label</label>
+					<select name="" id="">
+						<option value="">select</option>
+					</select>			
+				</div>
+				<div class="wrapper-input">
+					<label for="">Label</label>
+					<select name="" id="">
+						<option value="">select</option>
+					</select>			
+				</div>
+				<div class="wrapper-input">
+					<label for="">Label</label>
+					<select name="" id="">
+						<option value="">select</option>
+					</select>			
+				</div>
+				<div class="wrapper-input">
+					<label for="">Label</label>
+					<select name="" id="">
+						<option value="">select</option>
+					</select>			
+				</div>
+				<div class="wrapper-input">
+					<label for="">Cuenta</label>
+					<input type="text" placeholder="Número de cuenta">		
+				</div>
+
+				<button> Agregar <i class="fa fa-plus-circle fa-fw"></i></button>
+			</li>
+		</ul>
+	</aside>
+	<div class="content">
+		<table>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Producto</th>
+					<th>Cantidad</th>
+					<th>Precio por unidad</th>
+					<th>Subtotal</th>
+					<th>Impuestos</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="row in tableList" ng-class="{removing:row.removing}">
+					<td>{{ ( $index + 1 ) }}</td>
+					<td>{{row.item}}</td>
+					<td>{{row.count}}</td>
+					<td>$ {{priceByUnit}}</td>
+					<td>$ {{subtotal}}</td>
+					<td>
+						<a href="" ng-click="showIVA(row,$index)" class="link"><span>IVA</span></a>
+						<a href="" ng-click="showISR(row,$index)" class="link"><span>ISR</span></a>
+					</td>
+					<td>
+						<i class="fa fa-pencil-square-o fa-fw green pointer"></i>
+						<i class="fa fa-trash-o fa-fw red pointer" ng-click="removeItem($index)"></i>
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+	<aside class="right">
+		<div class="wrapper-title">
+			Percepciones
+		</div>
+		<div class="wrapper-text">
+			<label for="">Subtotal</label>
+			<label for="">$</label>		
+		</div>
+		<div class="wrapper-text">
+			<label for="">Descuento</label>
+			<label for="">$</label>		
+		</div>
+		<div class="wrapper-text">
+			<label for="">IVA 16%</label>
+			<label for="">$</label>		
+		</div>
+		<div class="wrapper-text">
+			<label for="">Total</label>
+			<label for="">$</label>		
+		</div>
+		<button> Visualizar <i class="fa fa-file fa-fw"></i></button>
+		<button> Facturar <i class="fa fa-file-text fa-fw"></i></button>
+	</aside>
+</main>
